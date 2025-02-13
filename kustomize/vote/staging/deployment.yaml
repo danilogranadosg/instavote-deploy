@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote
+spec:
+  minReadySeconds: 20
+  replicas: 5
+  template:
+    spec:
+      containers:
+      - name: vote
+        image: schoolofdevops/vote:v3
+        envFrom:
+        - configMapRef:
+            name: vote-options
+            optional: true
+       
+
