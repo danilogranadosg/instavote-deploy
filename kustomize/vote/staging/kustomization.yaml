@@ -4,10 +4,9 @@ resources:
 - ../base
 patches:
 - path: deployment.yaml
-- path: service.yaml
 replicas:
 - name: vote
-  count: 2
+  count: 0
 images:
 - name: schoolofdevops/vote
   newName: danilogranadosg/vote
